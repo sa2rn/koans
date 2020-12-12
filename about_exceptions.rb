@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 class AboutExceptions < Neo::Koan
-
   class MySpecialError < RuntimeError
   end
 
@@ -26,7 +25,7 @@ class AboutExceptions < Neo::Koan
     assert_equal true, ex.is_a?(RuntimeError),  "Should be a Runtime Error"
 
     assert RuntimeError.ancestors.include?(StandardError),
-      "RuntimeError is a subclass of StandardError"
+           "RuntimeError is a subclass of StandardError"
 
     assert_equal "Oops", ex.message
   end
@@ -64,5 +63,4 @@ class AboutExceptions < Neo::Koan
       raise MySpecialError.new("New instances can be raised directly.")
     end
   end
-
 end

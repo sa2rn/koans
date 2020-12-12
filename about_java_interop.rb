@@ -129,9 +129,8 @@ class AboutJavaInterop < Neo::Koan
 
   def test_java_class_are_open_from_ruby
     java_array = java.util.ArrayList.new
-    java_array.add_all([1,2,3,4,5])
+    java_array.add_all([1, 2, 3, 4, 5])
 
     assert_equal __, java_array.multiply_all
   end
-
 end

@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 class AboutControlStatements < Neo::Koan
-
   def test_if_then_else_statements
     if true
       result = :true_value
@@ -59,7 +58,7 @@ class AboutControlStatements < Neo::Koan
 
   def test_unless_statement
     result = :default_value
-    unless false    # same as saying 'if !false', which evaluates as 'if true'
+    unless false # same as saying 'if !false', which evaluates as 'if true'
       result = :false_value
     end
     assert_equal :false_value, result
@@ -95,6 +94,7 @@ class AboutControlStatements < Neo::Koan
     result = 1
     while true
       break unless i <= 10
+
       result = result * i
       i += 1
     end
@@ -104,9 +104,10 @@ class AboutControlStatements < Neo::Koan
   def test_break_statement_returns_values
     i = 1
     result = while i <= 10
-      break i if i % 2 == 0
-      i += 1
-    end
+               break i if i % 2 == 0
+
+               i += 1
+             end
 
     assert_equal 2, result
   end
@@ -117,6 +118,7 @@ class AboutControlStatements < Neo::Koan
     while i < 10
       i += 1
       next if (i % 2) == 0
+
       result << i
     end
     assert_equal [1, 3, 5, 7, 9], result
@@ -138,5 +140,4 @@ class AboutControlStatements < Neo::Koan
     end
     assert_equal 10, sum
   end
-
 end

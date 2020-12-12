@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 class AboutIteration < Neo::Koan
-
   # -- An Aside ------------------------------------------------------
   # Ruby 1.8 stores names as strings. Ruby 1.9 and later stores names
   # as symbols. So we use a version dependent method "as_name" to
@@ -48,6 +47,7 @@ class AboutIteration < Neo::Koan
     sum = 0
     array.each do |item|
       break if item > 3
+
       sum += item
     end
     assert_equal 6, sum
@@ -118,5 +118,4 @@ class AboutIteration < Neo::Koan
   #   # code to read 'file'
   #
   # When you get to the "AboutSandwichCode" koan, recheck your answer.
-
 end
