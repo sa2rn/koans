@@ -14,13 +14,15 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  raise TriangleError, "Must be greater than zero" if a <= 0 || b <= 0 || c <= 0
-  raise TriangleError, "The sum of any two sides must be lower than a third side" if a + b <= c || a + c <= b || b + c <= a
+  a, b, c = [a, b, c].sort
 
-  return :equilateral if a == b && b == c
-  return :isosceles if a == b || b == c || a == c
+  raise TriangleError, 'Invalid side size' if a + b <= c
 
-  :scalene
+  case [a, b, c].uniq.size
+  when 1 then :equilateral
+  when 2 then :isosceles
+  else :scalene
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
